@@ -1,0 +1,26 @@
+<html>
+   <head>
+      <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.js"></script>
+      <script type="text/javascript" src = "require_config.js"></script>
+   </head>
+   <style>
+    body { background-color: white; }
+   </style>
+
+   <body>
+    <button id="close">Close</button>
+      <script>
+          require(['canvas_api', 'jquery'], function(canvasApi, $) {
+            canvasApi.getUser(function(user) {
+              $("#name").text(user.name);
+            })
+
+            $('#close').click(function(){
+              canvasApi.hideOverlay();
+            });
+
+        });
+      </script>
+      Hello <span id="name"></span>
+   </body>
+</html>
