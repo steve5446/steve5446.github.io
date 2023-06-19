@@ -34,7 +34,7 @@ $(document).ready(function() {
   function loadCSS() {
         var fileref = document.createElement("link");
         fileref.setAttribute("type", "text/css");
-        fileref.setAttribute("href", "button.css");
+        fileref.setAttribute("href", "https://" + window.learnWiseSetup.host + "button.css");
         fileref.setAttribute("rel", "stylesheet");
         document.getElementsByTagName("head")[0].appendChild(fileref);
 
