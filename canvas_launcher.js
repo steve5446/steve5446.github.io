@@ -44,7 +44,7 @@ $(document).ready(function() {
     
     button.click(function() {
       var overlay = $("<div id='lw_overlay'>").addClass("overlay");
-      var iframe = $("<iframe>").addClass("overlay-iframe").attr("src", window.learnWiseSetup.host + "/iframe/chat_frame.html");
+      var iframe = $("<iframe>").addClass("overlay-iframe").attr("src", "https://" + window.learnWiseSetup.host + "/iframe/chat_frame.html");
       
       overlay.append(iframe);
       $("body").append(overlay);
