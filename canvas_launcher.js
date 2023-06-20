@@ -1,4 +1,4 @@
-$(document).ready(function() {
+//$(document).ready(function() {
 /*  function init_event_listners() {    
     const handlers = {};
   
@@ -100,4 +100,4 @@ $(document).ready(function() {
 */
 
 
-});
+//});
