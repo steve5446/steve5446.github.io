@@ -1,11 +1,11 @@
-define(['jquery', 'iframe_communicator_client'], function ($, iframe_communicator_client) {
+define(['jquery', 'message_client'], function ($, message_client) {
 
     function hideOverlay() {
-        iframe_communicator_client.invoke("hideOverlay", {});
+        message_client.invoke("hideOverlay", {});
     }
 
     function restGet(url, responseHandler) {
-        iframe_communicator_client.invoke("rest.get", { url: url }, responseHandler);
+        message_client.invoke("rest.get", { url: url }, responseHandler);
     }
 
 
