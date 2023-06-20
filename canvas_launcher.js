@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  function init_event_listners() {    
-/*    const handlers = {};
+/*  function init_event_listners() {    
+    const handlers = {};
   
     window.addEventListener("message", (e) => {
         if (handlers[e.data.messageHandler] == undefined) return;
