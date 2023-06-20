@@ -10,7 +10,7 @@
     var button = $("<div style='display: none'>").addClass("floating-button").text("?");
     
     button.click(function() {
-      var overlay = $("<div id='lw_overlay'>").addClass("overlay");
+      var overlay = $("<div id='lw_overlay' style='display: none'>").addClass("overlay");
       var iframe = $("<iframe>").addClass("overlay-iframe").attr("src", "https://" + window.learnWiseSetup.host + "/iframe/chat_frame.html");
       
       overlay.append(iframe);
@@ -19,6 +19,7 @@
       overlay.click(function() {
         $("#lw_overlay").remove();
       });
+      overlay.fadeIn();
     });
     
     $("body").append(button);
