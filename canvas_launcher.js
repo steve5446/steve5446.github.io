@@ -1,6 +1,6 @@
 $(document).ready(function() {
   function init_event_listners() {    
-    const handlers = {};
+/*    const handlers = {};
   
     window.addEventListener("message", (e) => {
         if (handlers[e.data.messageHandler] == undefined) return;
@@ -30,7 +30,7 @@ $(document).ready(function() {
         }
     };
   }
-
+*/
   function loadCSS() {
         var fileref = document.createElement("link");
         fileref.setAttribute("type", "text/css");
@@ -60,7 +60,31 @@ $(document).ready(function() {
   loadCSS();
   addFloatingButton();
 
-  iframeCommunicatorServer = init_event_listners();
+
+
+
+
+
+  var onCommunicatorLoaded = function (iframeCommunicatorServer) {
+    iframeCommunicatorServer.bind("hideOverlay", (request, response) => {
+      $("#lw_overlay").remove();
+    });
+  
+    iframeCommunicatorServer.bind("getUser", (request, response) => {
+      response({name: "aaa"})
+    });
+  
+    iframeCommunicatorServer.bind("rest.get", (request, response) => {
+      $.get(request.url, response);
+    });    
+  };	
+  
+
+
+
+  $.getScript("https://" + window.learnWiseSetup.host + "/iframe_communicator_server.js");
+
+ /* iframeCommunicatorServer = init_event_listners();
 
   iframeCommunicatorServer.bind("hideOverlay", (request, response) => {
     $("#lw_overlay").remove();
@@ -73,7 +97,7 @@ $(document).ready(function() {
   iframeCommunicatorServer.bind("rest.get", (request, response) => {
     $.get(request.url, response);
   });
-
+*/
 
 
 });
