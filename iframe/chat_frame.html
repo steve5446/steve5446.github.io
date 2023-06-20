@@ -11,9 +11,14 @@
     <button id="close">Close</button>
       <script>
           require(['canvas_api', 'jquery'], function(canvasApi, $) {
-            canvasApi.getUser(function(user) {
+
+            canvasApi.rest.get("/api/v1/users/self", function(user) {
               $("#name").text(user.name);
-            })
+            });
+
+         /*   canvasApi.getUser(function(user) {
+              $("#name").text(user.name);
+            });*/
 
             $('#close').click(function(){
               canvasApi.hideOverlay();

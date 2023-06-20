@@ -70,5 +70,10 @@ $(document).ready(function() {
     response({name: "aaa"})
   });
 
+  iframeCommunicatorServer.bind("rest.get", (request, response) => {
+    $.get(request.url, response);
+  });
+
+
 
 });
