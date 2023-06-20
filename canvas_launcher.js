@@ -3,7 +3,10 @@
         fileref.setAttribute("type", "text/css");
         fileref.setAttribute("href", "https://" + window.learnWiseSetup.host + "/lw_canvas.css");
         fileref.setAttribute("rel", "stylesheet");
-        fileref.onload = addFloatingButton;
+        fileref.onload = function() {
+          alert("gogo");
+          addFloatingButton();
+        };
         document.getElementsByTagName("head")[0].appendChild(fileref);
 
   }  
