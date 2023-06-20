@@ -11,7 +11,6 @@ define(['jquery', 'iframe_communicator_client'], function ($, iframe_communicato
 
     return {
         hideOverlay: hideOverlay,
-        getUser: getUser,
         rest: {
             get: restGet
         }

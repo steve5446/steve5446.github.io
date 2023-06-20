@@ -7,7 +7,7 @@
 
   }  
   function addFloatingButton() {
-    var button = $("<div>").addClass("floating-button").text("?");
+    var button = $("<div style='display: none'>").addClass("floating-button").text("?");
     
     button.click(function() {
       var overlay = $("<div id='lw_overlay'>").addClass("overlay");
@@ -22,6 +22,7 @@
     });
     
     $("body").append(button);
+    button.fadein();
   }
   
   loadCSS();
