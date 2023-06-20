@@ -10,14 +10,14 @@
     var button = $("<div id='lw-floating-button' style='display: none'>").text("?");
     
     button.click(function() {
-      var overlay = $("<div id='lw_overlay' style='display: none'>");
+      var overlay = $("<div id='lw-overlay' style='display: none'>");
       var iframe = $("<iframe id='lw-overlay-iframe'>").attr("src", "https://" + window.learnWiseSetup.host + "/iframe/chat_frame.html");
       
       overlay.append(iframe);
       $("body").append(overlay);
 
       overlay.click(function() {
-        $("#lw_overlay").remove();
+        $("#lw-overlay").remove();
       });
       overlay.fadeIn();
     });
@@ -32,7 +32,7 @@
 
   var onMessageServerLoaded = function (messageServer) {
     messageServer.bind("hideOverlay", (request, response) => {
-      $("#lw_overlay").remove();
+      $("#lw-overlay").remove();
     });
   
     messageServer.bind("rest.get", (request, response) => {
