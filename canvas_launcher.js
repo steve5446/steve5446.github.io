@@ -22,7 +22,7 @@
     });
     
     $("body").append(button);
-    button.fadein();
+    button.fadeIn();
   }
   
   loadCSS();
