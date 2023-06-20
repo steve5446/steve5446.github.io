@@ -1,12 +1,9 @@
-  function loadCSS() {
+  function loadCSS(callback) {
         var fileref = document.createElement("link");
         fileref.setAttribute("type", "text/css");
         fileref.setAttribute("href", "https://" + window.learnWiseSetup.host + "/lw_canvas.css");
         fileref.setAttribute("rel", "stylesheet");
-        fileref.onload = function() {
-          alert("gogo");
-          addFloatingButton();
-        };
+        fileref.onload = callback;
         document.getElementsByTagName("head")[0].appendChild(fileref);
 
   }  
@@ -35,8 +32,9 @@
     button.fadeIn();
   }
   
-  loadCSS();
-  //addFloatingButton();
+  loadCSS(function() {
+    addFloatingButton();
+  });
 
 
   var onMessageServerLoaded = function (messageServer) {
