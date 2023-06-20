@@ -6,6 +6,13 @@
         document.getElementsByTagName("head")[0].appendChild(fileref);
 
   }  
+
+  function fadeOutOverlay() {
+    $("#lw-overlay").fadeOut(function() {
+      $("#lw-overlay").remove();
+    });
+  }
+
   function addFloatingButton() {
     var button = $("<div id='lw-floating-button' style='display: none'>").text("?");
     
@@ -16,9 +23,7 @@
       overlay.append(iframe);
       $("body").append(overlay);
 
-      overlay.click(function() {
-        $("#lw-overlay").remove();
-      });
+      overlay.click(fadeOutOverlay);
       overlay.fadeIn();
     });
     
@@ -32,7 +37,7 @@
 
   var onMessageServerLoaded = function (messageServer) {
     messageServer.bind("hideOverlay", (request, response) => {
-      $("#lw-overlay").remove();
+      fadeOutOverlay()
     });
   
     messageServer.bind("rest.get", (request, response) => {
