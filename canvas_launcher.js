@@ -7,11 +7,11 @@
 
   }  
   function addFloatingButton() {
-    var button = $("<div style='display: none'>").addClass("floating-button").text("?");
+    var button = $("<div id='lw-floating-button' style='display: none'>").text("?");
     
     button.click(function() {
-      var overlay = $("<div id='lw_overlay' style='display: none'>").addClass("overlay");
-      var iframe = $("<iframe>").addClass("overlay-iframe").attr("src", "https://" + window.learnWiseSetup.host + "/iframe/chat_frame.html");
+      var overlay = $("<div id='lw_overlay' style='display: none'>");
+      var iframe = $("<iframe id='lw-overlay-iframe'>").attr("src", "https://" + window.learnWiseSetup.host + "/iframe/chat_frame.html");
       
       overlay.append(iframe);
       $("body").append(overlay);
