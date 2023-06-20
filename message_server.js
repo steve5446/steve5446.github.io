@@ -30,5 +30,5 @@ function init() {
     };
   }
   
-  onCommunicatorLoaded(init());
+  onMessageServerLoaded(init());
   
