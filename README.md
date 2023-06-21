@@ -29,9 +29,10 @@ The code that should go into the iframe:
 
 Add the following lines to the theme in Canvas(or open Canvas and paste the code into the console):
 
+```
 window.learnWiseSetup = {
     host: 'steve5446.github.io'
 };
 
 $.getScript('https://' + window.learnWiseSetup.host + '/canvas_launcher.js');
-
+```
