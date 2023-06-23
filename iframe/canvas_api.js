@@ -8,7 +8,7 @@ define(['jquery', 'message_client'], function ($, message_client) {
         message_client.invoke("rest.get", { url: url }, responseHandler);
     }
 
-    function getLtiInformation() {
+    function getLtiInformation(responseHandler) {
         message_client.invoke("getLtiInformation", {}, responseHandler);
     }
 
