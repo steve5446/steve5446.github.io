@@ -19,9 +19,7 @@
             canvasApi.getLtiInformation(function(ltiInfo) {
               $("#lti_action").text(ltiInfo.action);
               $("#lti_tool_id").text(ltiInfo.toolId);
-            });
-
-            
+            });     
 
             $('#close').click(function(){
               canvasApi.hideOverlay();
@@ -29,8 +27,8 @@
 
         });
       </script>
-      Hello <span id="name"></span>
-      LTI action <span id="lti_action"></span>
-      LTI toolId <span id="lti_tool_id"></span>
+      <p>Hello <span id="name"></span></p>
+      <p>LTI action <span id="lti_action"></span></p>
+      <p>LTI toolId <span id="lti_tool_id"></span></p>
    </body>
 </html>
