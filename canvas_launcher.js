@@ -19,7 +19,7 @@ function loadCSS(callback) {
     $("#lw-floating-button").text("?");
 
     if (!buttoVisible()) {
-      button.fadeOut();
+      $("#lw-floating-button").fadeOut();
     }      
 
   }
@@ -36,7 +36,7 @@ function loadCSS(callback) {
     overlay.fadeIn();
 
     if (!buttoVisible()) {
-      button.fadeIn();
+      $("#lw-floating-button").fadeIn();
     }
   }
 
@@ -55,8 +55,8 @@ function loadCSS(callback) {
     if (!!window.learnWiseSetup.launchSelectors) {
       window.learnWiseSetup.launchSelectors.forEach(function(selector) {
         $(selector).click(function(event) {
-          showChat();
           event.preventDefault();
+          showChat();          
           return false;
         });
 
