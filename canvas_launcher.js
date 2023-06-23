@@ -54,7 +54,11 @@ function loadCSS(callback) {
 
     if (!!window.learnWiseSetup.launchSelectors) {
       window.learnWiseSetup.launchSelectors.forEach(function(selector) {
-        $(selector).click(showChat);
+        $(selector).click(function(event) {
+          showChat();
+          event.preventDefault();
+        });
+
       });
     }
   }
