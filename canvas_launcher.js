@@ -43,8 +43,6 @@ function loadCSS(callback) {
   function addFloatingButton() {
     var button = $("<div id='lw-floating-button' style='display: none'>").text("?");
     
-    button.click(showChat);
-    
     $("body").append(button);
     if (buttoVisible()) {
       button.fadeIn();
