@@ -27,7 +27,7 @@ function loadCSS(callback) {
   function showChat() {
     $("#lw-floating-button").text("X");
     var overlay = $("<div id='lw-overlay' style='display: none'>");
-    var iframe = $("<iframe id='lw-overlay-iframe'>").attr("src", window.learnWiseSetup.toolSrc);
+    var iframe = $("<iframe id='lw-overlay-iframe'>").attr("src", window.learnWiseSetup.chatSrc);
     
     overlay.append(iframe);
     $("body").append(overlay);
