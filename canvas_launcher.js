@@ -74,6 +74,18 @@ function loadCSS(callback) {
     messageServer.bind("hideOverlay", (request, response) => {
       fadeOutOverlay()
     });
+
+    messageServer.bind("getLtiInformation", (request, response) => {
+      if ($("#tool_form").length === 1) {
+        
+        response({
+          "action": $("#tool_form").attr("action"),
+          "toolId": $("#tool_form").data("toolId")
+        });
+      } else {
+        response({});
+      }
+    });
   
     messageServer.bind("rest.get", (request, response) => {
       $.get(request.url, response);
