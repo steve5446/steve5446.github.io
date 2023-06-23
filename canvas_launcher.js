@@ -57,6 +57,7 @@ function loadCSS(callback) {
         $(selector).click(function(event) {
           showChat();
           event.preventDefault();
+          return false;
         });
 
       });
