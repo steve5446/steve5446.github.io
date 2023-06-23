@@ -1,4 +1,8 @@
-  function loadCSS(callback) {
+function buttoVisible() {
+  return window.learnWiseSetup.showButton === undefined || window.learnWiseSetup.showButton;
+}
+
+function loadCSS(callback) {
         var fileref = document.createElement("link");
         fileref.setAttribute("type", "text/css");
         fileref.setAttribute("href", "https://" + window.learnWiseSetup.host + "/lw_canvas.css");
@@ -12,28 +16,54 @@
     $("#lw-overlay").fadeOut(function() {
       $("#lw-overlay").remove();
     });
+    $("#lw-floating-button").text("?");
+
+    if (!buttoVisible()) {
+      button.fadeOut();
+    }      
+
+  }
+
+  function showChat() {
+    $("#lw-floating-button").text("X");
+    var overlay = $("<div id='lw-overlay' style='display: none'>");
+    var iframe = $("<iframe id='lw-overlay-iframe'>").attr("src", "https://" + window.learnWiseSetup.host + "/iframe/chat_frame.html");
+    
+    overlay.append(iframe);
+    $("body").append(overlay);
+
+    overlay.click(fadeOutOverlay);
+    overlay.fadeIn();
+
+    if (!buttoVisible()) {
+      button.fadeIn();
+    }
   }
 
   function addFloatingButton() {
     var button = $("<div id='lw-floating-button' style='display: none'>").text("?");
     
-    button.click(function() {
-      var overlay = $("<div id='lw-overlay' style='display: none'>");
-      var iframe = $("<iframe id='lw-overlay-iframe'>").attr("src", "https://" + window.learnWiseSetup.host + "/iframe/chat_frame.html");
-      
-      overlay.append(iframe);
-      $("body").append(overlay);
-
-      overlay.click(fadeOutOverlay);
-      overlay.fadeIn();
-    });
+    button.click(showChat);
     
     $("body").append(button);
-    button.fadeIn();
+    if (buttoVisible()) {
+      button.fadeIn();
+    }      
+  }
+
+  function registerListeners() {
+    $("#lw-floating-button").click(showChat);
+
+    if (!!window.learnWiseSetup.launchSelectors) {
+      window.learnWiseSetup.launchSelectors.forEach(function(selector) {
+        $(selector).click(showChat);
+      });
+    }
   }
   
   loadCSS(function() {
     addFloatingButton();
+    registerListeners();
   });
 
 

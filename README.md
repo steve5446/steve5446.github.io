@@ -31,7 +31,9 @@ Add the following lines to the theme in Canvas(or open Canvas and paste the code
 
 ```
 window.learnWiseSetup = {
-    host: 'steve5446.github.io'
+    showButton: true,
+    host: 'steve5446.github.io',
+    launchSelectors: ["a[href*=impact"]
 };
 
 $.getScript('https://' + window.learnWiseSetup.host + '/canvas_launcher.js');
