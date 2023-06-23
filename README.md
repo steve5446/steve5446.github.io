@@ -33,7 +33,7 @@ Add the following lines to the theme in Canvas(or open Canvas and paste the code
 window.learnWiseSetup = {
     showButton: true,
     host: 'steve5446.github.io',
-    launchSelectors: ["a[href*=impact"],
+    launchSelectors: ["a[href*=learnwise"],
     chatSrc: "https://steve5446.github.io/iframe/chat_frame.html"
 };
 
