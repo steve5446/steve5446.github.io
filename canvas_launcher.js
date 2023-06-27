@@ -54,11 +54,17 @@ function loadCSS(callback) {
 
     if (!!window.learnWiseSetup.launchSelectors) {
       window.learnWiseSetup.launchSelectors.forEach(function(selector) {
-        $(selector).click(function(event) {
+        // $(selector).click(function(event) {
+        //   event.preventDefault();
+        //   showChat();          
+        //   return false;
+        // });
+
+        $(document).on('click', selector, function(event){
           event.preventDefault();
           showChat();          
           return false;
-        });
+        })
 
       });
     }
