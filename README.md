@@ -39,3 +39,15 @@ window.learnWiseSetup = {
 
 $.getScript('https://' + window.learnWiseSetup.host + '/canvas_launcher.js');
 ```
+## Extra for menu button launch
+```
+## Extra
+window.learnWiseSetup = {
+    showButton: false,
+    host: 'steve5446.github.io',
+    launchSelectors: ["a[href*=learnwiselaunch"],
+    chatSrc: "https://steve5446.github.io/iframe/chat_frame.html"
+};
+
+$.getScript('https://' + window.learnWiseSetup.host + '/canvas_launcher.js');
+
