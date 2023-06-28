@@ -17,6 +17,26 @@
   z-index: 99999;
 }
 
+#lw-floating-button:hover {
+  transform-origin: center;
+  width: 66px;
+  height: 66px;
+  bottom: calc(20px - 3px);
+  right: calc(20px - 3px);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#lw-floating-image {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#lw-floating-button:hover #lw-floating-image {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+
 #lw-overlay {
   position: fixed;
   top: 0;
@@ -30,6 +50,7 @@
   justify-content: center;
   align-items: center;
 }
+/* This is likely for the full-page overlay, which we may not want to use. */
 
 #lw-overlay-iframe {
   position: fixed;

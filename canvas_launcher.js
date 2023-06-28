@@ -40,14 +40,27 @@ function loadCSS(callback) {
     }
   }
 
-  function addFloatingButton() {
-    var button = $("<div id='lw-floating-button' style='display: none'>").text("?");
-    
-    $("body").append(button);
-    if (buttoVisible()) {
-      button.fadeIn();
-    }      
+function registerListeners() {
+  $("#lw-floating-button").click(showChat);
+
+  if (!!window.learnWiseSetup.launchSelectors) {
+    window.learnWiseSetup.launchSelectors.forEach(function(selector) {
+      // $(selector).click(function(event) {
+      //   event.preventDefault();
+      //   showChat();          
+      //   return false;
+      // });
+
+      $(document).on('click', selector, function(event){
+        event.preventDefault();
+        showChat();          
+        return false;
+      })
+
+    });
   }
+
+}
 
   function registerListeners() {
     $("#lw-floating-button").click(showChat);
