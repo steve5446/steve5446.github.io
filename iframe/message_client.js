@@ -27,7 +27,7 @@ define(['jquery'], function ($) {
             responseHandlers[obj.messageId] = callback;
         }
 
-        console.log(obj)
+        console.log('the objects being passed to parent', obj)
         window.parent.postMessage(obj, '*');
     }
   
