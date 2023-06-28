@@ -12,18 +12,19 @@ function loadCSS(callback) {
 }  
 
 function fadeOutOverlay() {
+  
+  $("#lw-overlay").fadeOut(function() {
+    $("#lw-overlay").remove();
+  });
+
   const button = document.getElementById("lw-floating-button");
   const image = document.getElementById("lw-floating-image");
-  
+
   if (button && image) {
     button.classList.remove("close");
     button.classList.add("initial");
     image.src = 'https://learnwise.ai/wp-content/uploads/2023/06/LearnWise-Chat-Iocn.svg';
   }
-  
-  $("#lw-overlay").fadeOut(function() {
-    $("#lw-overlay").remove();
-  });
   
   if (!buttoVisible()) {
     $("#lw-floating-button").fadeOut();
@@ -49,6 +50,8 @@ function toggleButtonState() {
 
 function showChat() {
   toggleButtonState();
+
+  console.log('showing chat')
   
   var overlay = $("<div id='lw-overlay' style='display: none'>");
   var iframe = $("<iframe id='lw-overlay-iframe'>").attr("src", window.learnWiseSetup.chatSrc);
@@ -87,6 +90,7 @@ function addFloatingButton() {
 }
 
 function registerListeners() {
+  $("#lw-floating-button").click(showChat);
   if (!!window.learnWiseSetup.launchSelectors) {
     window.learnWiseSetup.launchSelectors.forEach(function(selector) {
       $(document).on('click', selector, function(event){
