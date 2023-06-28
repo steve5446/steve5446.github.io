@@ -11,12 +11,13 @@
     <button id="close">Close</button>
       <script>
           require(['canvas_api', 'jquery'], function(canvasApi, $) {
-
+                                             // url, responseHandler
             canvasApi.rest.get("/api/v1/users/self", function(user) {
               $("#name").text(user.name);
+              console.log(user)
               // setup(user.id)
               // setup(user.email)
-              // console.log(user)
+              console.log(user)
             });
 
             canvasApi.getLtiInformation(function(ltiInfo) {
